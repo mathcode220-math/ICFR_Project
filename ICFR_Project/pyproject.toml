@@ -1,0 +1,33 @@
+[project]
+name = "icfr"
+version = "0.2.0"
+description = "Iterative-to-Closed-Form Reduction (ICFR) — automated structure discovery and direct inversion in fixed-point iterations, with GPU acceleration and nonlinear Newton extension"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "ICFR Project" }]
+keywords = ["numerical-analysis", "fixed-point", "linear-algebra", "anderson-acceleration", "woodbury", "fft", "gpu", "pytorch", "nonlinear", "newton"]
+
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.8",
+]
+
+[project.optional-dependencies]
+gpu = ["torch>=2.0"]
+nonlinear = ["torch>=2.0"]
+all = ["torch>=2.0"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+icfr = "icfr.cli:main"
+
+[project.urls]
+Paper = "https://github.com/mathcode220-math/My-papers/blob/main/ICFR_Detailed_Research_Paper.md"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["icfr"]
